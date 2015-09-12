@@ -1,7 +1,7 @@
-Heralds of Light/Assets/WorldArt
+Heralds of Light/Assets/Art
 
-Library
-Temp
+Heralds of Light/Library
+Heralds of Light/Temp
 *.csproj
 *.pidb
 *.unityproj
