@@ -1,5 +1,4 @@
 Heralds of Light/Assets/Art
-
 Heralds of Light/Library
 Heralds of Light/Temp
 *.csproj
@@ -8,3 +7,5 @@ Heralds of Light/Temp
 *.sln
 *.userprefs
 *.zip
+*.png
+*.psd
