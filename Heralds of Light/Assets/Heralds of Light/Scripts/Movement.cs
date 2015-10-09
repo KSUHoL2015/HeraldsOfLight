@@ -24,7 +24,6 @@ public class Movement : MonoBehaviour {
 		//velocity = Vector2.zero;
 		horizontal = Input.GetAxis ("Horizontal");
 		if (horizontal != 0) {
-			Debug.Log("bug");
 			anim.SetBool ("walk", true);
 			if(horizontal > 0)
 				transform.eulerAngles = new Vector3(0,180,0);
