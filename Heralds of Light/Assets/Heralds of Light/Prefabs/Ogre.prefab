@@ -171,6 +171,7 @@ GameObject:
   - 50: {fileID: 5065856}
   - 61: {fileID: 6118160}
   - 114: {fileID: 11413386}
+  - 114: {fileID: 11402644}
   m_Layer: 0
   m_Name: Ogre
   m_TagString: enemy
@@ -543,6 +544,18 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11402644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27c3478334275841924da0a75a4ae42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!114 &11413386
 MonoBehaviour:
   m_ObjectHideFlags: 1
