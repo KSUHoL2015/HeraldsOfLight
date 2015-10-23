@@ -13,6 +13,9 @@ public class Movement : MonoBehaviour {
 	public bool isGrounded;
 	public int direction;
 
+	public AudioSource as1;
+	public AudioClip ac;
+
 	private Vector2 velocity = Vector3.zero;
 
 	void Start(){
@@ -21,41 +24,43 @@ public class Movement : MonoBehaviour {
 		//speed = this.GetComponent<Stats> ().GetMovementSpeed ();
 	}
 
-	void Update() {			
-		//velocity = Vector2.zero;
-		horizontal = Input.GetAxis ("Horizontal");
-		if (horizontal != 0) {
-			anim.SetBool ("walk", true);
-			if(horizontal > 0)
-				transform.eulerAngles = new Vector3(0,180,0);
-			else
-				transform.eulerAngles = new Vector3(0,0,0);
-		}else
-			anim.SetBool ("walk", false);
+	void Update() {		
+
+			//velocity = Vector2.zero;
+			horizontal = Input.GetAxis ("Horizontal");
+			if (horizontal != 0) {
+				anim.SetBool ("walk", true);
+				if (horizontal > 0)
+					transform.eulerAngles = new Vector3 (0, 180, 0);
+				else
+					transform.eulerAngles = new Vector3 (0, 0, 0);
+			} else
+				anim.SetBool ("walk", false);
 		
-		transform.position += new Vector3(horizontal*speed*airSpeed,0,0);
+			transform.position += new Vector3 (horizontal * speed * airSpeed * Time.timeScale, 0, 0);
 
 
-		//attack grounded
-		if(isGrounded && Input.GetButton ("Fire2")){
+			//attack grounded
+			if (isGrounded && Input.GetButton ("Fire2")) {
 			
-		}
-		//attack air
-		if(!isGrounded && Input.GetButton ("Fire2")){												
+			}
+			//attack air
+			if (!isGrounded && Input.GetButton ("Fire2")) {												
 
-		}
-		//Falling
-		if (!isGrounded)								
-			airSpeed = .75f;
-		else
-			airSpeed = 1;
-		//Jump
-		if (isGrounded && Input.GetButtonDown("Jump")){									
-			velocity.y = jumpForce;
-			rb.AddForce (velocity);
-		}
+			}
+			//Falling
+			if (!isGrounded)								
+				airSpeed = .75f;
+			else
+				airSpeed = 1;
+			//Jump
+			if (isGrounded && Input.GetButtonDown ("Jump")) {									
+				velocity.y = jumpForce;
+				rb.AddForce (velocity);
+				as1.PlayOneShot (ac);
+			}
 
-		
+
 	}
 
 	void OnCollisionEnter2D(Collision2D c){

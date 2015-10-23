@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
+  - enemy
+  - Edge
+  - raiseEffect
+  - explosion
+  - aisight
   layers:
   - Default
   - TransparentFX
@@ -15,10 +20,10 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - AI
+  - AISight
+  - Player
+  - Edge
   - 
   - 
   - 
